@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+
+<script type="text/javascript">
+/* var path = request.getContextPath(); */
+/* var basePath =  */
+	/*[[${#httpServletRequest.getScheme() + "://" + #httpServletRequest.getServerName() + ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()}]]*/;
+
+</script>
+
+</head>
+<body>
+hello world<br/>
+<p th:text="${message}"></p>
+<p th:text="${contextPath}"></p>
+<a th:href="@{/}+home">相对路径</a>
+<a th:href='${#httpServletRequest.getScheme()+ "://" + #httpServletRequest.getServerName()+ ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()+"/home"}'>相对路径</a>
+<base th:href='${#httpServletRequest.getScheme()+ "://" + #httpServletRequest.getServerName()+ ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()+"/"}' />
+<a th:href="${basePath}">相对路径--过滤器中设置了basePath</a>
+<p th:text="${basePath}"></p>
+</body>
+</html>
