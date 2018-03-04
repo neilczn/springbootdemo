@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.core.annotation.Order;
 
-@Order(1)
-@WebFilter(filterName = "encodingFilter", urlPatterns = "/*")
+/*@Order(100)
+@WebFilter(filterName = "encodingFilter", urlPatterns = "/*")*/
 public class EncodingFilter implements Filter {
 
 	public EncodingFilter() {

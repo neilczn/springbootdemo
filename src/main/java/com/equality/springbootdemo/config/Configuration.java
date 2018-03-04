@@ -1,6 +1,11 @@
 package com.equality.springbootdemo.config;
 
+import javax.servlet.DispatcherType;
+
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -30,5 +35,20 @@ public class Configuration extends WebMvcConfigurerAdapter {
 
 
 	}
+	
+	/*@Bean
+    public FilterRegistrationBean testFilterRegistration() {
+
+        FilterRegistrationBean registration = new FilterRegistrationBean();
+        registration.setFilter(new DelegatingFilterProxy());
+        registration.addUrlPatterns("/*");
+        registration.setDispatcherTypes(DispatcherType.REQUEST, DispatcherType.ERROR);
+        //registration.addInitParameter("paramName", "paramValue");
+        registration.setName("springSessionRepositoryFilter");
+        registration.setOrder(1);
+        return registration;
+    }*/
+
+	
 
 }
