@@ -28,4 +28,25 @@ public class MathService {
 		return "success";
 	}
 	
+	/**
+	 * 加1
+	 * @param i
+	 * @return
+	 */
+	@Cacheable("plus") //
+	public int plus(int i) {
+		System.out.println("input:" + i + ";output:"+(i+1));
+	    return i+1;
+	}
+	
+	/**
+	 * 删除加1--手动触发，直接在radis是删除不了的
+	 * @param i
+	 * @return
+	 */
+	@CacheEvict(cacheNames = "plus")
+	public String plusEvict(int id) {
+		return "success";
+	}
+	
 }

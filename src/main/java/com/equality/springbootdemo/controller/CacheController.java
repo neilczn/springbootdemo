@@ -24,4 +24,14 @@ public class CacheController {
 		return mathService.negationEvict(i);
 	}
 	
+	@RequestMapping("/plus")
+	public String plus(int i){
+		return mathService.plus(i)+"";
+	}
+	
+	@RequestMapping("/delplus")
+	public String delPlus(int i){
+		return mathService.plusEvict(i);
+	}
+	
 }
