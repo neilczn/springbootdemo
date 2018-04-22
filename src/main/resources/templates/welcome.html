@@ -21,5 +21,9 @@ hello world<br/>
 <base th:href='${#httpServletRequest.getScheme()+ "://" + #httpServletRequest.getServerName()+ ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()+"/"}' />
 <a th:href="${basePath}">相对路径--过滤器中设置了basePath</a>
 <p th:text="${basePath}"></p>
+<div>
+	<a th:href="@{/}+logout">退出</a>
+</div>
+<p><label th:text="#{welcome}"></label></p>
 </body>
 </html>
