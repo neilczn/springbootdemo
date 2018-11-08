@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @author asus
  *
  */
-@Component
+//@Component
 public class MyUserDetailsService implements UserDetailsService {
 
 	

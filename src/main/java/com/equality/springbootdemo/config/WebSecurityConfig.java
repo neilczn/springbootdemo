@@ -57,7 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.deleteCookies("SESSION")  //删除cookie
 */		.and()
 			.authorizeRequests()
-	    		.antMatchers("/images/**","/css/**","/js/**").permitAll()   //静态资源设置为任何人都可以访问    可参考文档5.4 Authorize Requests
+	    		.antMatchers("/images/**","/css/**","/js/**","/webjars/**").permitAll()   //静态资源设置为任何人都可以访问    可参考文档5.4 Authorize Requests
 	    	.anyRequest()
 	    		.authenticated()
 			;		

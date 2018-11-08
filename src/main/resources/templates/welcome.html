@@ -4,11 +4,22 @@
 <meta charset="UTF-8"></meta>
 <title>Insert title here</title>
 
+<script th:src="@{/webjars/jquery/3.3.1/dist/jquery.min.js}"></script>
+<script th:src="@{/webjars/jquery.cookie/1.4.1/jquery.cookie.js}"></script>
+
 <script type="text/javascript">
 /* var path = request.getContextPath(); */
 /* var basePath =  */
 	/*[[${#httpServletRequest.getScheme() + "://" + #httpServletRequest.getServerName() + ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()}]]*/;
 
+	$(document).ready(
+	 	function(){
+		 $("#read").click(function(){
+				alert($.cookie($("#cookiename").val()));
+			});
+	});
+	
+    
 </script>
 
 </head>
@@ -25,5 +36,6 @@ hello world<br/>
 	<a th:href="@{/}+logout">退出</a>
 </div>
 <p><label th:text="#{welcome}"></label></p>
+<div>cookiename:<input id = "cookiename" type="text"></input><input id="read" type="button" value="读取"></input></div>
 </body>
 </html>

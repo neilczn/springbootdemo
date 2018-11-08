@@ -13,9 +13,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import com.equality.springbootdemo.interceptor.LoginInterceptor;
 
 @Component
-public class Configuration extends WebMvcConfigurerAdapter {
+public class IniConfiguration extends WebMvcConfigurerAdapter {
 
-	public Configuration() {
+	public IniConfiguration() {
 		System.out.println("Configuration()");
 	}
 	
